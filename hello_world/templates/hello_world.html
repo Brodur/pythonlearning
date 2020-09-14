@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello wolrd</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
   <h1>Hello Wolrd</h1>
   <p>Welcome to Django</p>
-</body>
-</html>
+  <p>Hello {{ name }}</p>
+  <p>A little birdie told me you turned {{ age }} this year.</p>
+{% endblock content %}
+
+

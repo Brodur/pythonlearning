@@ -2,10 +2,21 @@ from django.shortcuts import render, HttpResponse
 
 # Create your views here.
 def hello_world(request):
-  return render(request, 'hello_world.html')
+  context = {
+    'title': 'Hello World',
+    'name': 'Brodie Giesbrecht',
+    'age': 23
+  }
+  return render(request, 'hello_world.html', context)
 
 def a(request):
-  return render(request, 'a.html')
+  context = {
+    'title': 'EH'
+  }
+  return render(request, 'a.html', context)
 
 def b(request):
-  return render(request, 'b.html')
+  context = {
+    'title': 'BEE',
+  }
+  return render(request, 'b.html', context)
