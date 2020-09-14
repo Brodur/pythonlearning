@@ -1,10 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<main>
+
+
   <h1>Hello Wolrd</h1>
   <p>Welcome to Django</p>
   <p>Hello {{ name }}</p>
   <p>A little birdie told me you turned {{ age }} this year.</p>
+  <h2>I heard these are your friends:</h2>
+  <ul>
+    {% for friend in all_friends %}
+      <li>
+        {{ friend.name }} aged {{ friend.age }}
+      </li>
+    {% endfor %}
+  </ul>
+</main>
 {% endblock content %}
 
 
