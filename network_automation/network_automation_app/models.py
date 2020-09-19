@@ -17,3 +17,13 @@ class Device(models.Model):
 
   def __str__(self):
     return "{}. {}".format(self.id, self.ip_address)
+
+class Log(models.Model):
+  target = models.CharField(max_length=255)
+  action = models.CharField(max_length=255)
+  status = models.CharField(max_length=255)
+  time = models.DateTimeField(null=True)
+  messages = models.CharField(max_length=255, blank=True)
+
+  def __str__(self):
+    return "{} - {} - {}".format(self.target, self.action, self.status)
