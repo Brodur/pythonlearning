@@ -11,10 +11,14 @@ def home(request):
   ciscos = Device.objects.filter(vendor='cisco')
   mikrotiks = Device.objects.filter(vendor='mikrotik')
 
+  last_events = Log.objects.all().order_by('-id')[:10]
+
+
   context = {
     'all_devices': len(all_devices),
     'cisco_devices': len(ciscos),
-    'mikrotik_devices': len(mikrotiks)
+    'mikrotik_devices': len(mikrotiks),
+    'last_event': last_events
   }
 
   return render(request, 'home.html', context)
